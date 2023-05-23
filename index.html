@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Satma</title>
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css">
+    <link rel="stylesheet" href="assets/css/costom.css">
+    <link rel="stylesheet" href="assets/css/commen.css">
+
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css">
+    <style>
+        /* .pills-vertical .nav.nav-pills .nav-link img {
+filter: grayscale(1);
+} */
+        /* .pills-vertical .nav.nav-pills .nav-link .time-img{
+filter: grayscale(1);
+}
+.pills-vertical .nav.nav-pills .nav-link.active .time-img{
+filter: none;
+} */
+        .tabs {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #tab-button li a:hover,
+        #tab-button .is-active a {
+            background: #55d5a5;
+            border: 1px solid #55d5a5;
+        }
+
+        #tab-button .time-img {
+            filter: grayscale(1);
+        }
+
+        #tab-button .is-active .time-img {
+            filter: none;
+        }
+
+
+        .tab-contents {
+            padding: .3em .3em .3em;
+            /* border: 1px solid #ddd; */
+        }
+
+
+
+
+        .tab-contents {
+            margin-top: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .tab-button-outer {
+                position: relative;
+                z-index: 2;
+                display: block;
+            }
+
+            .tab-select-outer {
+                display: none;
+            }
+
+            .tab-contents {
+                position: relative;
+                top: -1px;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper"> <!-- <div> added -->
+        <section class="new-head">
+            <div class="container">
+                <div class="disp-flex disp-block t-ac">
+                    <div>
+                        <img src="images/Asset 1.png" alt="">
+                    </div>
+
+                    <div class='text nav-cont '>
+                        <p class="disp-n">
+                            This report has been made for demonstration purpose by Satma CE only.
+                            <br>Any elements or images used here cannot be replicated or reused elsewhere.
+                        </p>
+                        <p class="disp-b">
+                            This report has been made for demonstration purpose by Satma CE only.
+                            Any elements or images used here cannot be replicated or reused elsewhere.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="dashboard-wrapper bg-gray m-p">
+            <div>
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 col-xs-2 col-2 img-position">
+                            <div class="main">
+                                <img src="images/Asset 2.png" alt="" class="w100 w-150">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-10 col-sm-10 p-r0">
+                            <div class="first-wrap ">
+                                <h1 class="f-hm color-w text-upper font-sb f-s24 color-green">Panels</h1>
+                                <h4 class="color-w font-r f-s14 color-black ">Deluxe recycling India Pvt. Ltd.</h4>
+
+                            </div>
+                            <div>
+                                <p class="f-s12 disp-n font-r fs-12 mb-0 color-b  second-wrap">
+                                    Panels made from recycled MLP and Tetra Pak <br>
+                                </p>
+                                <p class="f-s12 disp-b font-r fs-12 mb-0 color-b  second-wrap">
+                                    Panels made from recycled MLP and Tetra Pak <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 p-l5">
+                            <div>
+                                <img src="images\Asset4.jpeg" alt="" class="banner-img img-c">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12  p-l0 p-r0">
+
+                    <div class="simple-card">
+                        <ul class="nav nav-tabs" id="myTab5" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active border-left-2 font-m f-s14" id="home-tab-simple"
+                                    data-toggle="tab" href="#home-simple" role="tab" aria-controls="home"
+                                    aria-selected="true">
+                                    Product Journey</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-m f-s14" id="contact-tab-simple" data-toggle="tab"
+                                    href="#material-simple" role="tab" aria-controls="contact"
+                                    aria-selected="false">Material   &nbsp;FLow   
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link font-m f-s14" id="profile-tab-simple" data-toggle="tab"
+                                    href="#profile-simple" role="tab" aria-controls="profile"
+                                    aria-selected="false">Images</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-m f-s14" id="contact-tab-simple" data-toggle="tab"
+                                    href="#contact-simple" role="tab" aria-controls="contact"
+                                    aria-selected="false">Emission
+                                    Report</a>
+                            </li>
+
+                        </ul>
+                        <div class="container">
+                            <div class="tab-content" id="myTabContent5">
+                                <div class="tab-pane fade show active" id="home-simple" role="tabpanel"
+                                    aria-labelledby="home-tab-simple">
+
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+
+                                                <div class="pills-vertical">
+                                                    <div class="row tabs">
+                                                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12 col-12 b">
+                                                            <div class="tab-button-outer fixed-bottom">
+                                                                <ul id="tab-button"
+                                                                    class="nav flex-column nav-pills border-none timeline">
+                                                                    <li><a href="#tab01" class="event  nav-link ">
+
+                                                                            <div class="time-img">
+                                                                                <img src="images/icon/Asset 7.png"
+                                                                                    alt="">
+
+                                                                            </div>
+                                                                            <h3>
+                                                                                Collection </h3>
+                                                                        </a></li>
+                                                                    <li><a href="#tab02" class="event nav-link">
+                                                                            <div class="time-img">
+                                                                                <img src="images/icon/Segregation Icon (1).png"
+                                                                                    alt="" style="    width: 28px;
+                                                        margin-left: -6px;">
+
+                                                                            </div>
+                                                                            <h3>Segregation</h3>
+                                                                        </a></li>
+                                                                    <li><a href="#tab03" class="event nav-link">
+                                                                            <div class="time-img">
+                                                                                <img src="images/icon/triangular-arrows-sign-for-recycle.png"
+                                                                                    alt="">
+
+                                                                            </div>
+                                                                            <h3>Recycling</h3>
+                                                                        </a></li>
+                                                                    <li><a href="#tab04" class="event nav-link m-b0">
+                                                                            <div class="time-img">
+                                                                                <img src="images/icon/qr-code.png"
+                                                                                    alt="">
+
+                                                                            </div>
+                                                                            <h3>Product</h3>
+                                                                        </a></li>
+
+                                                                </ul>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <!-- </div> -->
+                                                        <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12 col-12 a">
+                                                            <!-- <div class="tab-select-outer">
+                                                <select id="tab-select">
+                                                    <option value="#tab01">Tab 1</option>
+                                                    <option value="#tab02">Tab 2</option>
+                                                    <option value="#tab03">Tab 3</option>
+                                                    <option value="#tab04">Tab 4</option>
+                                                    <option value="#tab05">Tab 5</option>
+                                                </select>
+                                                </div> -->
+
+                                                            <div id="tab01" class="tab-contents">
+                                                                <div id="map"></div>
+                                                                <div id="image-container"></div>
+                                                                <div class="col-12 p-0 disp-flex just-space">
+                                                                    <ul class="date p-0">
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">Collection
+                                                                            </p>
+                                                                            <span class="color-b">Jan 2023</span>
+                                                                        </li>
+                                                                        <!-- <li>
+                                                            <p class="color-green m-0 font-m"> Processing Date</p>
+                                                            <span class="color-b">07 July 2022</span>
+                                                        </li> -->
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">
+                                                                                Certification</p>
+                                                                            <span class="color-b">
+                                                                                GRS</span>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <!-- <div class="disp-flex m-t20 float-left">
+                                                        <p class="f-s10">
+                                                            Map View
+                                                        </p>
+                                                        <input type="checkbox" class="button2" id="toggle-btn">
+                                                        <p class="f-s10">
+                                                            Chart View
+                                                        </p>
+                                                    </div> -->
+                                                                </div>
+                                                            </div>
+                                                            <div id="tab02" class="tab-contents">
+                                                                <div id="map2"></div>
+                                                                <div id="image-container2"></div>
+                                                                <div class="col-12 p-0 disp-flex just-space">
+                                                                    <ul class="date p-0">
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">Collection
+                                                                            </p>
+                                                                            <span class="color-b">Feb 2023</span>
+                                                                        </li>
+                                                                        <!-- <li>
+                                                            <p class="color-green m-0 font-m"> Processing Date</p>
+                                                            <span class="color-b">07 July 2022</span>
+                                                        </li> -->
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">
+                                                                                Certification</p>
+                                                                            <span class="color-b">
+                                                                                GRS</span>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <!-- <div class="disp-flex m-t20 float-left">
+                                                        <p class="f-s10">
+                                                            Map View
+                                                        </p>
+                                                        <input type="checkbox" class="button2" id="toggle-btn2">
+                                                        <p class="f-s10">
+                                                            Chart View
+                                                        </p>
+                                                    </div> -->
+                                                                </div>
+                                                            </div>
+                                                            <div id="tab03" class="tab-contents">
+                                                                <div id="map3"></div>
+                                                                <div id="image-container3"></div>
+                                                                <div class="col-12 p-0 disp-flex just-space">
+                                                                    <ul class="date p-0">
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">Collection
+                                                                            </p>
+                                                                            <span class="color-b">Feb 2023</span>
+                                                                        </li>
+                                                                        <!-- <li>
+                                                        <p class="color-green m-0 font-m"> Processing Date</p>
+                                                        <span class="color-b">07 July 2022</span>
+                                                    </li> -->
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">
+                                                                                Certification</p>
+                                                                            <span class="color-b">
+                                                                                GRS</span>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <div class="disp-flex m-t20 float-left">
+                                                                        <p class="f-s10">
+                                                                            Map View
+                                                                        </p>
+                                                                        <input type="checkbox" class="button2"
+                                                                            id="toggle-btn3">
+                                                                        <p class="f-s10">
+                                                                            Chart View
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="tab04" class="tab-contents">
+                                                                <div id="map4"></div>
+                                                                <div id="image-container4"></div>
+                                                                <div class="col-12 p-0 disp-flex just-space">
+                                                                    <ul class="date p-0">
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">Collection
+                                                                            </p>
+                                                                            <span class="color-b">March 2023</span>
+                                                                        </li>
+                                                                        <!-- <li>
+                                                            <p class="color-green m-0 font-m"> Processing Date</p>
+                                                            <span class="color-b">07 July 2022</span>
+                                                        </li> -->
+                                                                        <li>
+                                                                            <p class="color-green m-0 font-m">
+                                                                                Certification</p>
+                                                                            <span class="color-b">
+                                                                                GRS</span>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <div class="disp-flex m-t20 float-left">
+                                                                        <p class="f-s10">
+                                                                            Map View
+                                                                        </p>
+                                                                        <input type="checkbox" class="button2"
+                                                                            id="toggle-btn4">
+                                                                        <p class="f-s10">
+                                                                            Chart View
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div id="custom-search" class="top-search-bar">
+                                                    <!-- <input class="form-control location" type="text" value="Location"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                                <div class="tab-pane fade" id="profile-simple" role="tabpanel"
+                                    aria-labelledby="profile-tab-simple">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+
+                                                <div class="pills-vertical">
+                                                    <div class="row">
+                                                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12 col-12 b">
+                                                            <div class="tab-button-outer fixed-bottom">
+                                                                <div class=" nav flex-column nav-pills border-none timeline"
+                                                                    id="v-pills-tab" role="tablist"
+                                                                    aria-orientation="vertical">
+
+
+                                                                    <a class="event imgn active1 nav-link active"
+                                                                        id="v-pills-home-tab1" data-toggle="pill"
+                                                                        href="#v-pills-home1" role="tab"
+                                                                        aria-controls="v-pills-home1"
+                                                                        aria-selected="true">
+                                                                        <div class="time-img">
+                                                                            <img src="images/icon/Asset 7.png" alt="">
+
+                                                                        </div>
+                                                                        <h3>Collection </h3>
+                                                                    </a>
+                                                                    <a class="event imgn nav-link"
+                                                                        id="v-pills-profile-tab1" data-toggle="pill"
+                                                                        href="#v-pills-profile1" role="tab"
+                                                                        aria-controls="v-pills-profile1"
+                                                                        aria-selected="false">
+                                                                        <div class="time-img">
+                                                                            <img src="images/icon/Segregation Icon (1).png"
+                                                                                style="    width: 28px;
+                                                        margin-left: -6px;" alt="">
+
+                                                                        </div>
+                                                                        <h3>Segregation</h3>
+                                                                    </a>
+                                                                    <a class="event imgn nav-link"
+                                                                        id="v-pills-messages-tab1" data-toggle="pill"
+                                                                        href="#v-pills-messages1" role="tab"
+                                                                        aria-controls="v-pills-messages1"
+                                                                        aria-selected="false">
+                                                                        <div class="time-img">
+                                                                            <img src="images/icon/triangular-arrows-sign-for-recycle.png"
+                                                                                alt="">
+
+                                                                        </div>
+                                                                        <h3>Recycling</h3>
+                                                                    </a>
+                                                                    <a class="event imgn nav-link m-b0"
+                                                                        id="v-pills-settings-tab1" data-toggle="pill"
+                                                                        href="#v-pills-settings1" role="tab"
+                                                                        aria-controls="v-pills-settings1"
+                                                                        aria-selected="false">
+                                                                        <div class="time-img">
+                                                                            <img src="images/icon/qr-code.png" alt="">
+
+                                                                        </div>
+                                                                        <h3>Product</h3>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- </div> -->
+                                                        <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12 col-12 a">
+                                                            <div class="tab-content b-bn" id="v-pills-tabContent">
+                                                                <div class="tab-pane fade show active"
+                                                                    id="v-pills-home1" role="tabpanel"
+                                                                    aria-labelledby="v-pills-home-tab1">
+                                                                    <div class="row p-all">
+
+
+                                                                        <div class="col-lg-4 galery">
+                                                                            <img src="images\collection\1.jpeg" alt="" style="height: 280px">
+                                                                        </div>
+                                                                        <div class="col-lg-4 galery">
+                                                                            <img src="images\collection\3.jpeg" alt=""
+                                                                                style="height: 280px;">
+                                                                        </div>
+                                                                        <div class="col-lg-4 galery">
+                                                                            <img src="images\collection\2.jpeg" alt=""
+                                                                                style="height: 280px;">
+                                                                        </div>
+                                                                        <div class="col-lg-6 galery p-t0">
+                                                                            <img src="images\collection\4.jpeg" alt="" >
+                                                                        </div>
+                                                                        <div class="col-lg-6 galery p-t0 ">
+                                                                            <img src="images\collection\5.jpeg" alt="">
+                                                                        </div>
+                                                                        <div class="col-12  disp-flex just-space">
+                                                                            <ul class="date p-0">
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Collection </p>
+                                                                                    <span class="color-b">Jan
+                                                                                        2023</span>
+                                                                                </li>
+                                                                                <!-- <li>
+                                                                    <p class="color-green m-0"> Processing Date</p>
+                                                                    <span class="color-b">07 July 2022</span>
+                                                                </li> -->
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Certification</p>
+                                                                                    <span class="color-b">
+                                                                                        GRS</span>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                            <!-- <div class="disp-flex m-t20">
+                                                                <p class="f-s10">
+                                                                    Map View
+                                                                </p>
+                                                                <input type="checkbox">
+                                                                <p class="f-s10">
+                                                                    Chart View
+                                                                </p>
+                                                            </div> -->
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="v-pills-profile1"
+                                                                    role="tabpanel"
+                                                                    aria-labelledby="v-pills-profile-tab1">
+                                                                    <div class="row p-all">
+                                                                        <div class="col-lg-6 p-0">
+                                                                            <div class="col-lg-12 galery">
+                                                                                <img src="images/segregation/Segregation2.jpeg"
+                                                                                    alt="" style="height: 300px;">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6 p-0"
+                                                                            style="padding-left: 3px !important;">
+                                                                            <div class="col-lg-12 galery">
+                                                                                <img src="images/segregation/Segregation3.jpeg"
+                                                                                    alt="" style="height: 170px;">
+                                                                            </div>
+                                                                            <div class="col-lg-12 galery">
+                                                                                <img src="images/segregation/Segregation4.jpeg"
+                                                                                    alt="" style="height: 121px;">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12  disp-flex just-space">
+                                                                            <ul class="date p-0">
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Collection </p>
+                                                                                    <span class="color-b">Feb
+                                                                                        2023</span>
+                                                                                </li>
+                                                                                <!-- <li>
+                                                                    <p class="color-green m-0"> Processing Date</p>
+                                                                    <span class="color-b">07 July 2022</span>
+                                                                </li> -->
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Certification</p>
+                                                                                    <span class="color-b">
+                                                                                        GRS</span>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                            <!-- <div class="disp-flex m-t20">
+                                                                <p class="f-s10">
+                                                                    Map View
+                                                                </p>
+                                                                <input type="checkbox">
+                                                                <p class="f-s10">
+                                                                    Chart View
+                                                                </p>
+                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="v-pills-messages1"
+                                                                    role="tabpanel"
+                                                                    aria-labelledby="v-pills-messages-tab1">
+                                                                    <div class="row p-all">
+                                                                        <div class="col-lg-6 galery">
+                                                                            <img src="images/recycle/Recycling02.jpeg"
+                                                                                alt="" style="height: 250px;">
+                                                                        </div>
+                                                                        <div class="col-lg-6 galery">
+                                                                            <img src="images/recycle/Recycling03.jpeg"
+                                                                                alt="" style="height: 250px;">
+                                                                        </div>
+
+                                                                        <div class="col-12  disp-flex just-space">
+                                                                            <ul class="date p-0">
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Collection </p>
+                                                                                    <span class="color-b">Feb
+                                                                                        2023</span>
+                                                                                </li>
+                                                                                <!-- <li>
+                                                                    <p class="color-green m-0"> Processing Date</p>
+                                                                    <span class="color-b">07 July 2022</span>
+                                                                </li> -->
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Certification</p>
+                                                                                    <span class="color-b">
+                                                                                        GRS</span>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                            <!-- <div class="disp-flex m-t20">
+                                                                <p class="f-s10">
+                                                                    Map View
+                                                                </p>
+                                                                <input type="checkbox">
+                                                                <p class="f-s10">
+                                                                    Chart View
+                                                                </p>
+                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="v-pills-settings1"
+                                                                    role="tabpanel"
+                                                                    aria-labelledby="v-pills-settings-tab1">
+                                                                    <div class="row p-all">
+                                                                        <div class="col-lg-6 galery">
+                                                                            <img src="images/recycle/Product.jpeg"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div class="col-12  disp-flex just-space">
+                                                                            <ul class="date p-0">
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Collection </p>
+                                                                                    <span class="color-b">March
+                                                                                        2023</span>
+                                                                                </li>
+                                                                                <!-- <li>
+                                                                    <p class="color-green m-0"> Processing Date</p>
+                                                                    <span class="color-b">07 July 2022</span>
+                                                                </li> -->
+                                                                                <li>
+                                                                                    <p class="color-green m-0">
+                                                                                        Certification</p>
+                                                                                    <span class="color-b">
+                                                                                        GRS</span>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                            <!-- <div class="disp-flex m-t20">
+                                                                <p class="f-s10">
+                                                                    Map View
+                                                                </p>
+                                                                <input type="checkbox">
+                                                                <p class="f-s10">
+                                                                    Chart View
+                                                                </p>
+                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div id="custom-search" class="top-search-bar">
+                                                    <!-- <input class="form-control location" type="text" value="Location"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Adding For video -->
+                                <div class="tab-pane fade" id="material-simple" aria-labelledby="contact-tab-simple">
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-lg-2">
+                                                <img src="images\video\03_01.gif" alt="Satma" class="w-100-m">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Till here -->
+                                </div>
+
+                                <div class="tab-pane fade" id="contact-simple" role="tabpanel"
+                                    aria-labelledby="contact-tab-simple">
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-lg-2">
+
+                                            </div>
+                                            <div class="col-lg-8 p-l0 p-r0 disp tird-wrap">
+                                                <div class="row" id="myDIV1">
+
+
+
+
+                                                    <div class="col-lg-6 p-0 box1">
+                                                        <diV class="box font-sb f-s14 ">
+                                                            <p class="font-sb f-s16 mb-0">
+                                                                Carbon saved
+                                                            </p>
+                                                            <span class="font-sb f-s14"> 7.20 tons</span>
+                                                        </diV>
+                                                    </div>
+                                                    <div class="col-lg-6 p-0  mb-0 box1">
+                                                        <diV class="box font-sb f-s14">
+                                                            <p class="font-sb f-s16 mb-0">
+                                                                Water saved vs. virgin equivalent
+                                                            </p>
+                                                            <span class="font-sb f-s14"> 70 m3
+                                                            </span>
+                                                        </diV>
+                                                    </div>
+                                                    <div class="col-lg-6 p-0 ">
+                                                        <diV class="box font-sb f-s14">
+                                                            <p class="font-sb f-s16  mb-0">
+                                                                Total waste used
+                                                            </p>
+                                                            <span class="font-sb f-s14"> 5 tons</span>
+                                                        </diV>
+                                                    </div>
+                                                    <div class="col-lg-6 p-0 ">
+                                                        <diV class="box font-sb f-s14">
+                                                            <p class="font-sb f-s16  mb-0">
+                                                                Electricity saved vs. virgin equivalent
+                                                            </p>
+                                                            <span class="font-sb f-s14"> 194,867 MJ</span>
+                                                        </diV>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+            <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+            <script src="assets/js/costom.js">
+            </script>
+            <!-- <script src="assets/js/map.js"></script> -->
+            <script>
+                $(function () {
+                    var $tabButtonItem = $('#tab-button li'),
+                        $tabSelect = $('#tab-select'),
+                        $tabContents = $('.tab-contents'),
+                        activeClass = 'is-active';
+
+                    $tabButtonItem.first().addClass(activeClass);
+                    $tabContents.not(':first').hide();
+
+
+                    $tabButtonItem.find('a').on('click', function (e) {
+                        var target = $(this).attr('href');
+
+                        $tabButtonItem.removeClass(activeClass);
+                        $(this).parent().addClass(activeClass);
+                        $tabSelect.val(target);
+                        $tabContents.hide();
+                        $(target).show();
+                        e.preventDefault();
+                    });
+
+                    $tabSelect.on('change', function () {
+                        var target = $(this).val(),
+                            targetSelectNum = $(this).prop('selectedIndex');
+
+                        $tabButtonItem.removeClass(activeClass);
+                        $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                        $tabContents.hide();
+                        $(target).show();
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+    <!-- <div id="warning-message">
+<p style="font-size:30px"> this website is only viewable in landscape mode</p>
+</div> -->
+</body>
+
+</html>
